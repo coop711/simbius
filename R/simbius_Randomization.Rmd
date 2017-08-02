@@ -21,6 +21,7 @@ simbius <- read.xlsx("../data/simbius.xlsx",
                      endRow = 22, 
                      colIndex = 1:4, 
                      colClasses = rep("character", 6), 
+                     encoding = "UTF-8", 
                      stringsAsFactors = FALSE)
 str(simbius)
 ```

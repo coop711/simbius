@@ -7,19 +7,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-# install.packages("pander", repos = "https://cran.rstudio.com")
-# install.packages("xlsx", repos = "https://cran.rstudio.com")
 library(xlsx)
-library(pander)
 library(knitr)
-panderOptions('table.split.table', Inf)
-panderOptions('table.alignment.rownames', 'left')
-panderOptions('table.alignment.default', 'right')
 options(width = 180)
 ```
 
 ```{r, data, echo = FALSE, results = 'hide'}
-simbius <- read.xlsx("../data/simbius_0809.xlsx", 1, startRow = 2, endRow = 22, colIndex = 1:12, colClasses = c(rep("character", 12)), stringsAsFactors = FALSE)
+simbius <- read.xlsx("../data/simbius_0809.xlsx", 1, startRow = 2, endRow = 22, colIndex = 1:12, colClasses = c(rep("character", 12)), 
+                     encoding = "UTF-8", stringsAsFactors = FALSE)
 str(simbius)
 simbius$Group <- factor(simbius$Group, levels = c("Red", "Black"))
 simbius$Monty <- factor(simbius$Monty, levels = c("가", "나"), labels = c("바꾼다", "고수한다"))
@@ -43,7 +38,7 @@ str(simbius)
 ```
 
 ```{r, randomization, echo = FALSE, results = 'hide'}
-pander(summary(simbius))
+kable(summary(simbius))
 ```
 
 ### 퀴즈 응답 비교
