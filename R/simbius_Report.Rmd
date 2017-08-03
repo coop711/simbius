@@ -111,7 +111,7 @@ kable(table(simbius$Group, simbius$Wason_2), caption = "Wason Selection 2")
 
 ![](../pics/simbius_5_black.png)
 
-#### 이득은 완전히 하고, 손실은 피하고자 하는 경향 확인. Red는 이득을 완전히 확보하려는 게임(가)에, Black은 손실을 확률적으로 피하려는 게임(나)을 많이 선택.
+이득은 완전히 하고, 손실은 피하고자 하는 경향 확인. Red는 이득을 완전히 확보하려는 게임(가)에, Black은 손실을 확률적으로 피하려는 게임(나)을 많이 선택.
 
 ```{r, prospect theory, echo = FALSE}
 tbl.P <- table(simbius$Group, simbius$Prospect)
@@ -131,7 +131,7 @@ kable(tbl.P[1:2, ], caption = "손실회피심리")
 
 ![](../pics/simbius_5_black.png)
 
-#### 600명 중 200명이 사는 거나 400명이 죽는 것, 모두 살리는 거나 모두 죽지 않는 것이나 같은 내용임에도 반응이 다르게 나타남에 유의. 손실회피 경향과 같은 현상을 관찰할 수 있음.
+600명 중 200명이 사는 거나 400명이 죽는 것, 모두 살리는 거나 모두 죽지 않는 것이나 같은 내용임에도 반응이 다르게 나타남에 유의. 손실회피 경향과 같은 현상을 관찰할 수 있음.
 
 ```{r, Framing Effect, echo = FALSE}
 tbl.F <- table(simbius$Group, simbius$Framing)
@@ -151,7 +151,7 @@ kable(tbl.F[1:2, ], caption = "Framing Effect")
 
 ![](../pics/simbius_7_black.png)
 
-#### 표시하지 않으면 장기 기증의사가 있는 것으로 간주하는 경우(Red)와 표시하면 장기 기증의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 기증의사가 있다고 보는 질문지에 기증의사가 더 높게 나온다는 것에 유의. 어디다 디폴트를 두느냐에 따라 조사결과가 달라짐.
+표시하지 않으면 장기 기증의사가 있는 것으로 간주하는 경우(Red)와 표시하면 장기 기증의사가 있는 것으로 간주하는 경우(Black), 표시하지 않으면 기증의사가 있다고 보는 질문지에 기증의사가 더 높게 나온다는 것에 유의. 어디다 디폴트를 두느냐에 따라 조사결과가 달라짐.
 
 ```{r, Default, echo = FALSE}
 tbl.D <- table(simbius$Group, simbius$Default.2)
@@ -160,5 +160,5 @@ kable(tbl.D[1:2, ], caption = "장기기증의사")
 ```
 
 ```{r, save, echo = FALSE}
-save.image("../R/simbius.RData")
+# save.image("../R/simbius.RData")
 ```
