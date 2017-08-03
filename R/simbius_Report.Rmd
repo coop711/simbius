@@ -1,5 +1,5 @@
 ---
-title: "Simbius"
+title: "Simbius 2017"
 author: "coop711"
 date: "`r Sys.Date()`"
 output: html_document
@@ -19,8 +19,7 @@ simbius <- read.xlsx(file = "../data/simbius_0809.xlsx",
                      endRow = 22, 
                      colIndex = 1:12, 
                      colClasses = c(rep("character", 12)), 
-                     encoding = "UTF-8", 
-                     stringsAsFactors = FALSE)
+                     encoding = "UTF-8", stringsAsFactors = FALSE)
 str(simbius)
 ```
 
@@ -56,7 +55,8 @@ simbius$Default.2[Red & simbius$Default.2 == "예"] <- "없음"
 simbius$Default.2[Black & simbius$Default.2 == "빈칸"] <- "없음"
 simbius$Default.2[Black & simbius$Default.2 == "예"] <- "있음"
 simbius$Default.2[simbius$Default.2 == "NA"] <- NA
-simbius$Default.2 <- factor(simbius$Default.2, level = c("있음", "없음"))
+simbius$Default.2 <- factor(simbius$Default.2, 
+                            level = c("있음", "없음"))
 simbius$Default
 str(simbius)
 ```
