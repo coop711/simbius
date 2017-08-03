@@ -19,7 +19,8 @@ simbius <- read.xlsx(file = "../data/simbius_0809.xlsx",
                      endRow = 22, 
                      colIndex = 1:12, 
                      colClasses = c(rep("character", 12)), 
-                     encoding = "UTF-8", stringsAsFactors = FALSE)
+                     encoding = "UTF-8", 
+                     stringsAsFactors = FALSE)
 str(simbius)
 ```
 
