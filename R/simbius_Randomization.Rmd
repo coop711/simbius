@@ -29,10 +29,12 @@ str(simbius)
 ```{r, randomization, echo = FALSE, results = 'hide'}
 set.seed(73)
 N <- nrow(simbius) 
-red.id <- sample(1:N, size = floor(N / 2))
-red.id
-simbius$group <- factor(ifelse((1:N) %in% red.id, "red", "black"), levels = c("red", "black"))
-black.id <- (1:N)[-red.id]
+group <- 1 + sample(1:N) %% 2
+simbius$group <- factor(group, levels = 1:2, labels = c("red", "black"))
+# red.id <- sample(1:N, size = floor(N / 2))
+# red.id
+# simbius$group <- factor(ifelse((1:N) %in% red.id, "red", "black"), levels = # c("red", "black"))
+# black.id <- (1:N)[-red.id]
 ```
 
 ### Randomization Effects
@@ -86,5 +88,5 @@ kable(red.black.df)
 ```
 
 ```{r, save, echo=FALSE, message=FALSE, results='hide'}
-save.image("../R/simbius_data.RData")
+# save.image("../R/simbius_data.RData")
 ```
