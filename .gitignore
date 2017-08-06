@@ -8,3 +8,4 @@ R/*.RData
 R/*.html
 R/*.Ruserdata
 R/*.Rhistory
+R/rsconnect/
